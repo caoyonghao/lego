@@ -1,2 +1,2 @@
 require("babel-register");
-const test = require('./../lib/graphql-api')
+const test = require('./../server.js')
