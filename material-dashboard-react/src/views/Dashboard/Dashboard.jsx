@@ -31,6 +31,8 @@ import CardIcon from "components/Card/CardIcon.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 
+import { renderChild } from './DashboardHelper';
+
 import { bugs, website, server } from "variables/general";
 
 import {
@@ -43,7 +45,8 @@ import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardS
 
 class Dashboard extends React.Component {
   state = {
-    value: 0
+    value: 0,
+    dashboard: require('./../../mock/dashboard.json')
   };
   handleChange = (event, value) => {
     this.setState({ value });
@@ -54,9 +57,25 @@ class Dashboard extends React.Component {
   };
   render() {
     const { classes } = this.props;
+    const widgets = this.state.dashboard.widgets;
+
     return (
       <div>
-        <Grid container>
+        {
+          widgets.map((widgetInRow) => {
+            return (
+              <Grid key={new Date().getTime()} container>
+                {
+                  widgetInRow.map((widget, key) => {
+                    return renderChild({ classes, data: widget })
+                  })
+                }
+              </Grid>
+            )
+          })
+        }
+
+        {/* <Grid container>
           <GridItem xs={12} sm={6} md={3}>
             <Card>
               <CardHeader color="warning" stats icon>
@@ -131,8 +150,8 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-        </Grid>
-        <Grid container>
+        </Grid> */}
+        {/* <Grid container>
           <GridItem xs={12} sm={12} md={4}>
             <Card chart>
               <CardHeader color="success">
@@ -209,8 +228,8 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-        </Grid>
-        <Grid container>
+        </Grid> */}
+        {/* <Grid container>
           <GridItem xs={12} sm={12} md={6}>
             <CustomTabs
               title="Tasks:"
@@ -274,7 +293,7 @@ class Dashboard extends React.Component {
               </CardBody>
             </Card>
           </GridItem>
-        </Grid>
+        </Grid> */}
       </div>
     );
   }

@@ -1,0 +1,76 @@
+{
+    "id": "page-publish-dashboard",
+    "widgets": [
+        [{
+            "id": "dl-checker",
+            "type": "simple-card",
+            "config": {
+                "title": "死链检查",
+                "content": "发现4个死链",
+                "link": "#test",
+                "color": "warning"
+            }
+        },
+        {
+            "id": "mate-checker",
+            "type": "simple-card",
+            "config": {
+                "title": "埋点检查",
+                "content": "5个埋点缺失",
+                "link": "#test",
+                "color": "danger"
+            }
+        },
+        {
+            "id": "wechat-checker",
+            "type": "simple-card",
+            "config": {
+                "title": "微信检查",
+                "content": "有微信分享",
+                "link": "#test"
+            }
+        },
+        {
+            "id": "hf-checker",
+            "type": "simple-card",
+            "config": {
+                "title": "高保真检查",
+                "content": "高保真差异10%",
+                "link": "#test"
+            }
+        }],
+        [{
+            "id": "dl-checker-detail",
+            "type": "simple-table",
+            "config": {
+                "title": "死链检查",
+                "desc": "共有4个死链",
+                "table": {
+                    "head": ["ID", "Name", "Salary", "Country"],
+                    "data": [
+                        ["1", "Dakota Rice", "$36,738", "Niger"],
+                        ["2", "Minerva Hooper", "$23,789", "Curaçao"],
+                        ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
+                        ["4", "Philip Chaney", "$38,735", "Korea, South"]
+                    ]
+                }
+            }
+        },{
+            "id": "mate-checker-detail",
+            "type": "simple-table",
+            "config": {
+                "title": "埋点检查",
+                "desc": "共缺失6个埋点",
+                "table": {
+                    "head": ["ID", "Name", "Salary", "Country"],
+                    "data": [
+                        ["1", "Dakota Rice", "$36,738", "Niger"],
+                        ["2", "Minerva Hooper", "$23,789", "Curaçao"],
+                        ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
+                        ["4", "Philip Chaney", "$38,735", "Korea, South"]
+                    ]
+                }
+            }
+        }]
+    ]
+}
