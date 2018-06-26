@@ -22,12 +22,28 @@ const Dashboard = new GraphQLObjectType({
     }
 });
 
+const configType = new GraphQLObjectType({
+    name: 'Config',
+    description: 'config obj',
+    fields: {
+        title: { type: GraphQLString },
+        desc: { type: GraphQLString },
+        content: { type: GraphQLString },
+        link: { type: GraphQLString },
+    }
+})
 const widgetType = new GraphQLObjectType({
     name: 'Widget',
     description: 'widget obj',
     fields: {
         id: {
             type: GraphQLString
+        },
+        type: {
+            type: GraphQLString
+        },
+        config: {
+            type: configType
         }
     }
 })
